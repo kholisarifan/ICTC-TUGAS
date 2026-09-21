@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kumpulkan Tugas — ICTC Tugas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <div class="topnav-left">
+      <div class="mark">IC</div>
+      <div class="name">ICTC Tugas</div>
+    </div>
+    <div class="topnav-links">
+      <a href="dashboard-anggota.html"><span class="ic">🏠</span>Dashboard</a>
+      <a href="portfolio.html"><span class="ic">🗂️</span>Portofolio</a>
+    </div>
+    <div class="topnav-right">
+      <div class="user-chip">
+        <div class="av" data-user-inisial>-</div>
+        <div class="info">
+          <div class="nama" data-user-nama>-</div>
+          <div class="div" data-user-divisi>-</div>
+        </div>
+      </div>
+      <button class="icon-btn" id="btn-logout" title="Keluar" aria-label="Keluar">⎋</button>
+    </div>
+  </nav>
+
+  <main class="container container--narrow">
+    <a href="dashboard-anggota.html" class="text-sm text-dim">&larr; Kembali ke dashboard</a>
+
+    <div id="konten" class="mt-24">
+      <div class="loading-row">Memuat tugas...</div>
+    </div>
+  </main>
+</div>
+
+<script type="module" src="js/submit-tugas.js"></script>
+</body>
+</html>

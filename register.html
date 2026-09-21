@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar — ICTC Tugas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-screen">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <div class="mark">IC</div>
+      <div>
+        <div class="name">ICTC — Sistem Tugas</div>
+        <div class="sub">SMAN 1 Taman</div>
+      </div>
+    </div>
+
+    <h1>Daftar Akun Anggota</h1>
+    <p>Isi data di bawah untuk membuat akun. Akun admin/ketua dibuat manual oleh pengurus.</p>
+
+    <div class="form-error" id="err"></div>
+
+    <form id="form-register">
+      <div class="field">
+        <label for="nama">Nama lengkap</label>
+        <input type="text" id="nama" required autocomplete="name" placeholder="Nama kamu">
+      </div>
+      <div class="field">
+        <label for="divisi">Divisi</label>
+        <select id="divisi" required>
+          <option value="" disabled selected>Pilih divisi</option>
+          <option value="Program">Program</option>
+          <option value="Desain">Desain</option>
+          <option value="Multimedia">Multimedia</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" required autocomplete="email" placeholder="nama@contoh.com">
+      </div>
+      <div class="field">
+        <label for="password">Kata sandi</label>
+        <input type="password" id="password" required minlength="6" autocomplete="new-password" placeholder="Minimal 6 karakter">
+        <div class="hint">Minimal 6 karakter.</div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="btn-submit">Daftar</button>
+    </form>
+
+    <div class="auth-foot">
+      Sudah punya akun? <a href="index.html">Masuk di sini</a>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/register.js"></script>
+</body>
+</html>

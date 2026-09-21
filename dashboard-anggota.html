@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — ICTC Tugas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <div class="topnav-left">
+      <div class="mark">IC</div>
+      <div class="name">ICTC Tugas</div>
+    </div>
+    <div class="topnav-links">
+      <a href="dashboard-anggota.html" class="active"><span class="ic">🏠</span>Dashboard</a>
+      <a href="portfolio.html"><span class="ic">🗂️</span>Portofolio</a>
+    </div>
+    <div class="topnav-right">
+      <div class="user-chip">
+        <div class="av" data-user-inisial>-</div>
+        <div class="info">
+          <div class="nama" data-user-nama>-</div>
+          <div class="div" data-user-divisi>-</div>
+        </div>
+      </div>
+      <button class="icon-btn" id="btn-logout" title="Keluar" aria-label="Keluar">⎋</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div id="notif-area"></div>
+
+    <div class="page-head">
+      <h1>Halo, <span data-user-nama>-</span> 👋</h1>
+      <p class="mb-0">Divisi <span data-user-divisi>-</span> — ini daftar tugas kamu.</p>
+    </div>
+
+    <div class="stat-row" id="stat-row">
+      <div class="stat"><div class="num" id="st-diterima">–</div><div class="lbl">Diterima</div></div>
+      <div class="stat"><div class="num" id="st-terkumpul">–</div><div class="lbl">Menunggu review</div></div>
+      <div class="stat"><div class="num" id="st-revisi">–</div><div class="lbl">Perlu revisi</div></div>
+      <div class="stat"><div class="num" id="st-belum">–</div><div class="lbl">Belum dikumpulkan</div></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Daftar Tugas</h2>
+      </div>
+
+      <table class="data-table" id="tabel-tugas">
+        <thead>
+          <tr><th>Tugas</th><th>Deadline</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody id="tbody-tugas">
+          <tr><td colspan="4"><div class="loading-row">Memuat tugas...</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script type="module" src="js/anggota-dashboard.js"></script>
+</body>
+</html>

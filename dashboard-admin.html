@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Admin — ICTC Tugas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <div class="topnav-left">
+      <div class="mark">IC</div>
+      <div class="name">ICTC Tugas</div>
+    </div>
+    <div class="topnav-links">
+      <a href="dashboard-admin.html" class="active"><span class="ic">📊</span>Dashboard</a>
+      <a href="kelola-tugas.html"><span class="ic">🗒️</span>Kelola Tugas</a>
+    </div>
+    <div class="topnav-right">
+      <div class="user-chip">
+        <div class="av" data-user-inisial>-</div>
+        <div class="info">
+          <div class="nama" data-user-nama>-</div>
+          <div class="div" data-user-divisi>-</div>
+        </div>
+      </div>
+      <button class="icon-btn" id="btn-logout" title="Keluar" aria-label="Keluar">⎋</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Dashboard Admin</h1>
+      <p class="mb-0">Progres pengumpulan tugas seluruh anggota ICTC.</p>
+    </div>
+
+    <div class="panel">
+      <div class="stat-row mb-0">
+        <div class="stat"><div class="num" id="hero-num">–</div><div class="lbl" id="hero-label">Memuat...</div></div>
+        <div class="stat"><div class="num" id="sub-diterima">–</div><div class="lbl">Diterima</div></div>
+        <div class="stat"><div class="num" id="sub-revisi">–</div><div class="lbl">Revisi</div></div>
+        <div class="stat"><div class="num" id="sub-menunggu">–</div><div class="lbl">Menunggu review</div></div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-progres-divisi">
+      <div class="panel-head"><h2>Progres per Divisi</h2></div>
+      <div id="progres-divisi"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h2>Semua Pengumpulan</h2></div>
+
+      <div class="filter-bar">
+        <select id="f-divisi">
+          <option value="Semua">Semua Divisi</option>
+          <option value="Program">Program</option>
+          <option value="Desain">Desain</option>
+          <option value="Multimedia">Multimedia</option>
+        </select>
+        <select id="f-tugas"><option value="semua">Semua Tugas</option></select>
+        <select id="f-status">
+          <option value="semua">Semua Status</option>
+          <option value="belum">Belum Mengumpulkan</option>
+          <option value="terkumpul">Menunggu Review</option>
+          <option value="revisi">Perlu Revisi</option>
+          <option value="diterima">Diterima</option>
+        </select>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Anggota</th><th>Divisi</th><th>Tugas</th><th>Status</th><th>Nilai</th><th></th></tr></thead>
+        <tbody id="tbody-admin"><tr><td colspan="6"><div class="loading-row">Memuat data...</div></td></tr></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modal-review">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="mr-judul">Review Tugas</h3>
+      <button class="modal-close" id="mr-close" aria-label="Tutup">&times;</button>
+    </div>
+
+    <div class="detail-row"><span class="k">Anggota</span><span class="v" id="mr-anggota">-</span></div>
+    <div class="detail-row"><span class="k">Deskripsi</span><span class="v" id="mr-deskripsi">-</span></div>
+    <div class="detail-row" id="mr-file-row"><span class="k">File</span><span class="v" id="mr-file">-</span></div>
+    <div class="detail-row" id="mr-drive-row"><span class="k">Link Drive</span><span class="v" id="mr-drive">-</span></div>
+
+    <form id="form-review" class="mt-24">
+      <div class="field">
+        <label for="mr-nilai">Nilai (0–100)</label>
+        <input type="number" id="mr-nilai" min="0" max="100">
+      </div>
+      <div class="field">
+        <label for="mr-feedback">Feedback</label>
+        <textarea id="mr-feedback" placeholder="Catatan untuk anggota..."></textarea>
+      </div>
+      <div class="field mb-0">
+        <label for="mr-status">Status</label>
+        <select id="mr-status">
+          <option value="diterima">Diterima</option>
+          <option value="revisi">Revisi</option>
+        </select>
+      </div>
+      <div class="modal-foot">
+        <button type="button" class="btn btn-ghost" id="mr-cancel">Batal</button>
+        <button type="submit" class="btn btn-primary" id="mr-save">Simpan</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="js/admin-dashboard.js"></script>
+</body>
+</html>

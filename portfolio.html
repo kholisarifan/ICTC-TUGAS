@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portofolio — ICTC Tugas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .folio-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  @media (min-width: 640px) { .folio-grid { grid-template-columns: 1fr 1fr; } }
+  .folio-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+  .folio-card h3 { font-size: 15px; margin-bottom: 8px; }
+  .folio-nilai { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--status-diterima); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <div class="topnav-left">
+      <div class="mark">IC</div>
+      <div class="name">ICTC Tugas</div>
+    </div>
+    <div class="topnav-links">
+      <a href="dashboard-anggota.html"><span class="ic">🏠</span>Dashboard</a>
+      <a href="portfolio.html" class="active"><span class="ic">🗂️</span>Portofolio</a>
+    </div>
+    <div class="topnav-right">
+      <div class="user-chip">
+        <div class="av" data-user-inisial>-</div>
+        <div class="info">
+          <div class="nama" data-user-nama>-</div>
+          <div class="div" data-user-divisi>-</div>
+        </div>
+      </div>
+      <button class="icon-btn" id="btn-logout" title="Keluar" aria-label="Keluar">⎋</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Portofolio — <span data-user-nama>-</span></h1>
+      <p class="mb-0">Kumpulan tugas yang sudah diterima.</p>
+    </div>
+
+    <div id="folio" class="folio-grid">
+      <div class="loading-row">Memuat portofolio...</div>
+    </div>
+  </main>
+</div>
+
+<script type="module" src="js/portfolio.js"></script>
+</body>
+</html>

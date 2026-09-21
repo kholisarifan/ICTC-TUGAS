@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelola Tugas — ICTC Tugas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <div class="topnav-left">
+      <div class="mark">IC</div>
+      <div class="name">ICTC Tugas</div>
+    </div>
+    <div class="topnav-links">
+      <a href="dashboard-admin.html"><span class="ic">📊</span>Dashboard</a>
+      <a href="kelola-tugas.html" class="active"><span class="ic">🗒️</span>Kelola Tugas</a>
+    </div>
+    <div class="topnav-right">
+      <div class="user-chip">
+        <div class="av" data-user-inisial>-</div>
+        <div class="info">
+          <div class="nama" data-user-nama>-</div>
+          <div class="div" data-user-divisi>-</div>
+        </div>
+      </div>
+      <button class="icon-btn" id="btn-logout" title="Keluar" aria-label="Keluar">⎋</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-head flex-between flex-wrap gap-12">
+      <div>
+        <h1>Kelola Tugas</h1>
+        <p class="mb-0">Buat tugas baru tanpa perlu mengubah kode.</p>
+      </div>
+      <button class="btn btn-primary" id="btn-buka-buat">+ Buat Tugas</button>
+    </div>
+
+    <div class="panel">
+      <table class="data-table">
+        <thead><tr><th>Judul</th><th>Divisi</th><th>Deadline</th><th></th></tr></thead>
+        <tbody id="tbody-tugas"><tr><td colspan="4"><div class="loading-row">Memuat tugas...</div></td></tr></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modal-tugas">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="mt-judul-modal">Buat Tugas Baru</h3>
+      <button class="modal-close" id="mt-close" aria-label="Tutup">&times;</button>
+    </div>
+
+    <div class="form-error" id="mt-err"></div>
+
+    <form id="form-tugas">
+      <input type="hidden" id="mt-id">
+      <div class="field">
+        <label for="mt-judul">Judul tugas</label>
+        <input type="text" id="mt-judul" required placeholder="Contoh: Poster Event GSS">
+      </div>
+      <div class="field">
+        <label for="mt-deskripsi">Deskripsi</label>
+        <textarea id="mt-deskripsi" placeholder="Deskripsi singkat tugas ini..."></textarea>
+      </div>
+      <div class="field">
+        <label>Divisi yang dituju</label>
+        <div class="checkrow">
+          <label><input type="checkbox" value="Program" class="mt-divisi"> Program</label>
+          <label><input type="checkbox" value="Desain" class="mt-divisi"> Desain</label>
+          <label><input type="checkbox" value="Multimedia" class="mt-divisi"> Multimedia</label>
+        </div>
+        <div class="hint">Centang semua untuk menugaskan ke seluruh anggota ICTC.</div>
+      </div>
+      <div class="field">
+        <label for="mt-deadline">Deadline</label>
+        <input type="datetime-local" id="mt-deadline" required>
+      </div>
+      <div class="field">
+        <label for="mt-instruksi">Instruksi</label>
+        <textarea id="mt-instruksi" placeholder="Instruksi teknis, ukuran, format, dll (opsional)"></textarea>
+      </div>
+      <div class="field">
+        <label for="mt-file">File referensi (opsional)</label>
+        <input type="file" id="mt-file">
+        <div class="hint" id="mt-file-hint"></div>
+      </div>
+      <div class="field mb-0">
+        <label for="mt-bobot">Bobot / nilai maksimal</label>
+        <input type="number" id="mt-bobot" value="100" min="1" max="100">
+      </div>
+      <div class="modal-foot">
+        <button type="button" class="btn btn-ghost" id="mt-cancel">Batal</button>
+        <button type="submit" class="btn btn-primary" id="mt-save">Simpan Tugas</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="js/kelola-tugas.js"></script>
+</body>
+</html>
