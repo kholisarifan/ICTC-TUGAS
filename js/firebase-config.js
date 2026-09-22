@@ -12,12 +12,12 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.13.0/firebas
 import { getStorage } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js";
 
 const firebaseConfig = {
-  apiKey: "GANTI_DENGAN_API_KEY_KAMU",
-  authDomain: "GANTI_DENGAN_AUTH_DOMAIN_KAMU",
-  projectId: "GANTI_DENGAN_PROJECT_ID_KAMU",
-  storageBucket: "GANTI_DENGAN_STORAGE_BUCKET_KAMU",
-  messagingSenderId: "GANTI_DENGAN_SENDER_ID_KAMU",
-  appId: "GANTI_DENGAN_APP_ID_KAMU"
+  apiKey: "AIzaSyAUq3qIDKgYVUPOaIpEd98nvJAWEAM2mMc",
+  authDomain: "ictc-tugas.firebaseapp.com",
+  projectId: "ictc-tugas",
+  storageBucket: "ictc-tugas.firebasestorage.app",
+  messagingSenderId: "919014452867",
+  appId: "1:919014452867:web:f24d2d159b67521c5e35b6",
 };
 
 const app = initializeApp(firebaseConfig);
